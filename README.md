@@ -37,5 +37,3 @@ and padddings are defined using `em` or `rem`).
 - `article`: max-width and padding
 - `.bspaced`: basic space-between flexbox layout
 - `.tablebox`: table overflowing on smaller screens
-
-test
