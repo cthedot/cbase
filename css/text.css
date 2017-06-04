@@ -1,0 +1,314 @@
+/*
+
+16
+
+40 32 24 20 *16* 14
+
+2.5 2 1.5 1 0.875
+
+*/
+
+html {
+  font-size: 100%;
+}
+
+.fonts-loaded body {
+  /* font-family: ... */
+}
+
+body {
+  font: normal 1em/1.5 Arial, Segoe UI, Helvetica, sans-serif;
+  -webkit-font-feature-settings: 'kern', 'liga', 'onum';
+  font-feature-settings: 'kern', 'liga', 'onum';
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+}
+
+table {
+  -webkit-font-feature-settings: 'kern', 'liga', 'tnum';
+  font-feature-settings: 'kern', 'liga', 'tnum';
+}
+.textcaps {
+  -webkit-font-feature-settings: 'kern', 'liga';
+  font-feature-settings: 'kern', 'liga';
+}
+
+.no-hyphens {
+  -webkit-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+.textnegative {
+  line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.25),
+only screen and ( min-device-pixel-ratio: 1.25),
+only screen and ( -webkit-min-device-pixel-ratio: 2.0833333333333335),
+only screen and ( min-resolution: 200dpi),
+only screen and ( -webkit-min-device-pixel-ratio: 1.25),
+only screen and ( min-resolution: 1.25dppx) {
+  .textnegative {
+    -webkit-font-smoothing: subpixel-antialiased;
+  }
+}
+
+b,
+strong {
+  font-weight: bold;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+dl,
+dd {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.textlarge {
+  font-size: 2.5em
+}
+
+h1 {
+  line-height: 1.25;
+  font-size: 2em;
+  font-weight: normal;
+}
+
+h2 {
+  line-height: 1.3333;
+  font-size: 1.5em;
+  font-weight: normal;
+}
+
+h3,
+h4
+caption {
+  font-size: 1em;
+  font-weight: bold;
+}
+
+h5 {
+  font-size: 1em;
+  font-weight: normal;
+}
+
+h6 {
+  font-weight: normal;
+}
+
+h6,
+small,
+.textnote {
+  font-size: 0.875em;
+}
+
+h1 + h2 {
+  margin-top: 0.25em;
+}
+
+h2 + h3 {
+  margin-top: 1rem;
+}
+
+h1 + p,
+h1 + ol,
+h1 + ul,
+h1 + dl,
+h1 + table {
+  margin-top: 0.75em;
+}
+
+h2 + h3,
+h2 + p,
+h2 + ol,
+h2 + ul,
+h2 + dl,
+h2 + table,
+h2 + .tablebox {
+  margin-top: 0.375em;
+}
+
+h3 + h4,
+h4 + h5,
+h3 + p,
+h3 + ol,
+h3 + ul,
+h3 + dl,
+h3 + table,
+h3 + .tablebox {
+  margin-top: 1.5em;
+}
+
+h4 + p,
+h4 + ol,
+h4 + ul,
+h4 + dl,
+h4 + table,
+h4 + .tablebox {
+  margin-top: 0;
+}
+
+p + h2,
+ol + h2,
+ul + h2,
+dl + h2,
+table + h2,
+.tablebox + h2 {
+  margin-top: 3.2em;
+}
+p + h3,
+dl + h3,
+ol + h3,
+ul + h3,
+table + h3,
+.tablebox + h3,
+p + h4,
+dl + h4,
+ol + h4,
+ul + h4,
+table + h4,
+.tablebox + h4,
+p + h5,
+dl + h5,
+ol + h5,
+ul + h5,
+table + h5,
+.tablebox + h5 {
+  margin-top: 1.6em;
+}
+
+p + ul,
+p + ol,
+p + dl,
+p + table,
+p + .tablebox,
+ul + ul,
+ul + ol,
+ul + dl,
+ul + table,
+ul + .tablebox,
+ol + ul,
+ol + ol,
+ol + dl,
+ol + table,
+ol + .tablebox,
+dl + ul,
+dl + dl,
+dl + dl,
+dl + table,
+dl + .tablebox,
+table + ul,
+table + ol,
+table + dl,
+table + table,
+.tablebox + .tablebox {
+  margin-top: 1.6em;
+}
+
+@media (min-width: 48em) {
+  p + p {
+    margin-top: 1.6em;
+  }
+}
+
+@media (max-width: 47.9999em) {
+  p + p {
+    text-indent: 1.6em;
+  }
+}
+
+
+ul,
+ol {
+  padding-left: 2em;
+}
+
+li {
+  padding-left: 0;
+}
+
+dd {
+  margin-left: 2em;
+}
+
+.textul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.textul li {
+  padding-left: 2em
+}
+
+.textul li:before {
+  content: '–';
+  position: absolute;
+  margin-left: -1.75em;
+}
+
+.textlink {
+  border-bottom: 1px solid;
+}
+
+.textlink:hover,
+.textlink:focus {
+  opacity: 0.6;
+}
+
+.textcaps {
+  text-transform: lowercase;
+  font-variant: small-caps;
+  letter-spacing: 0.02em;
+}
+
+tr {
+  vertical-align: top;
+}
+
+caption,
+th {
+  text-align: left;
+}
+
+th,
+td {
+  padding: 0 1em 1em;
+}
+
+pre {
+  font-family: Consolas, monospace;
+  white-space: pre-wrap;
+  padding: 1em 15px;
+  margin: 1.6em -15px;
+}
+
+hr {
+  border: none;
+  text-align: center;
+  border-top: 1px solid;
+  max-width: 64%;
+  margin: 2.4em auto 1.6em;
+  overflow: visible;
+  opacity: 0.5;
+}
+
+hr:before {
+  content: '§';
+  position: relative;
+  top: -0.8em;
+  background: #fff;
+  padding: 0 0.8em;
+}
