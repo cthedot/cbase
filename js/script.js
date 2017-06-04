@@ -4,31 +4,26 @@
 
   // WEBFONTS see CSS
   enableFonts([{
-    name: 'Open sans',
-    variation: {
-      weight: 300
-    }
-  }, {
-    name: 'Open sans',
-    variation: {
-      weight: 300,
-      style: 'italic'
-    }
-  }, {
-    name: 'Open sans',
+    name: 'Fira Sans',
     variation: {
       weight: 400
     }
   }, {
-    name: 'Open sans',
+    name: 'Fira Sans',
     variation: {
       weight: 400,
       style: 'italic'
     }
   }, {
-    name: 'Open sans',
+    name: 'Fira Sans',
     variation: {
-      weight: 600
+      weight: 700
+    }
+  }, {
+    name: 'Fira Sans',
+    variation: {
+      weight: 700,
+      style: 'italic'
     }
   }]);
 

@@ -1,4 +1,13 @@
 /*
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans:400,400i,700,700i');
+
+.fonts-loaded body {
+  font-family: Fira Sans, -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+}
+*/
+
+
+/*
 
 16
 
@@ -6,18 +15,21 @@
 
 2.5 2 1.5 1 0.875
 
+calc(2em * 1.25 / 2 - 1.5em * 1.33 / 2)
+
+margin-top of x + y
+xfont-size * xline-height / 2 - yfont-size * yline-height / 2
+
 */
 
 html {
   font-size: 100%;
 }
 
-.fonts-loaded body {
-  /* font-family: ... */
-}
 
 body {
-  font: normal 1em/1.5 Arial, Segoe UI, Helvetica, sans-serif;
+  font: normal 1em/1.5 sans-serif;
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   -webkit-font-feature-settings: 'kern', 'liga', 'onum';
   font-feature-settings: 'kern', 'liga', 'onum';
   -webkit-hyphens: auto;
@@ -29,9 +41,15 @@ table {
   -webkit-font-feature-settings: 'kern', 'liga', 'tnum';
   font-feature-settings: 'kern', 'liga', 'tnum';
 }
+
 .textcaps {
   -webkit-font-feature-settings: 'kern', 'liga';
   font-feature-settings: 'kern', 'liga';
+}
+
+.textfrac {
+  -webkit-font-feature-settings: 'kern', 'liga', 'frac';
+  font-feature-settings: 'kern', 'liga', 'frac';
 }
 
 .no-hyphens {
@@ -41,7 +59,6 @@ table {
 }
 
 .textnegative {
-  line-height: 1.8;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -55,11 +72,6 @@ only screen and ( min-resolution: 1.25dppx) {
   .textnegative {
     -webkit-font-smoothing: subpixel-antialiased;
   }
-}
-
-b,
-strong {
-  font-weight: bold;
 }
 
 h1,
@@ -78,23 +90,24 @@ dd {
 }
 
 .textlarge {
-  font-size: 2.5em
+  font-size: 2.5em;
+  line-height: 1.25;
 }
 
 h1 {
-  line-height: 1.25;
   font-size: 2em;
+  line-height: 1.25;
   font-weight: normal;
 }
 
 h2 {
-  line-height: 1.3333;
   font-size: 1.5em;
+  line-height: 1.3333;
   font-weight: normal;
 }
 
 h3,
-h4
+h4,
 caption {
   font-size: 1em;
   font-weight: bold;
@@ -112,15 +125,20 @@ h6 {
 h6,
 small,
 .textnote {
-  font-size: 0.875em;
+  font-size: 0.8125em;
+  line-height: calc(1em / 0.8125 * 1.5);
+}
+
+.textlarge + h1 {
+  margin-top: calc(2.5em * 1.25 / 2 - 2em * 1.25 / 2);
 }
 
 h1 + h2 {
-  margin-top: 0.25em;
+  margin-top: calc(2em * 1.25 / 2 - 1.5em * 1.33 / 2);
 }
 
 h2 + h3 {
-  margin-top: 1rem;
+  margin-top: calc(1.5em * 1.33 / 2 - 1em * 1.5 / 2);
 }
 
 h1 + p,
@@ -128,7 +146,7 @@ h1 + ol,
 h1 + ul,
 h1 + dl,
 h1 + table {
-  margin-top: 0.75em;
+  margin-top: calc(2em * 1.25 / 2 - 1.5em / 2);
 }
 
 h2 + h3,
@@ -138,19 +156,20 @@ h2 + ul,
 h2 + dl,
 h2 + table,
 h2 + .tablebox {
-  margin-top: 0.375em;
+  margin-top: calc(1.5em * 1.33 / 2 - 1.5em / 2);
 }
 
 h3 + h4,
-h4 + h5,
 h3 + p,
 h3 + ol,
 h3 + ul,
 h3 + dl,
 h3 + table,
-h3 + .tablebox {
+h3 + .tablebox,
+h4 + h5 {
   margin-top: 1.5em;
 }
+
 
 h4 + p,
 h4 + ol,
@@ -167,8 +186,9 @@ ul + h2,
 dl + h2,
 table + h2,
 .tablebox + h2 {
-  margin-top: 3.2em;
+  margin-top: 3em;
 }
+
 p + h3,
 dl + h3,
 ol + h3,
@@ -186,10 +206,7 @@ dl + h5,
 ol + h5,
 ul + h5,
 table + h5,
-.tablebox + h5 {
-  margin-top: 1.6em;
-}
-
+.tablebox + h5,
 p + ul,
 p + ol,
 p + dl,
@@ -214,22 +231,23 @@ table + ul,
 table + ol,
 table + dl,
 table + table,
-.tablebox + .tablebox {
-  margin-top: 1.6em;
+.tablebox + .tablebox,
+dd + dt {
+  margin-top: 1.5em;
 }
+
 
 @media (min-width: 48em) {
   p + p {
-    margin-top: 1.6em;
+    margin-top: 1.5em;
   }
 }
 
 @media (max-width: 47.9999em) {
   p + p {
-    text-indent: 1.6em;
+    text-indent: 1.5em;
   }
 }
-
 
 ul,
 ol {
@@ -257,6 +275,28 @@ dd {
   content: '–';
   position: absolute;
   margin-left: -1.75em;
+}
+
+
+b,
+strong {
+  font-weight: bold;
+}
+
+sub,
+sup {
+  font-size: 0.75em;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.6em;
 }
 
 .textlink {
@@ -292,7 +332,7 @@ pre {
   font-family: Consolas, monospace;
   white-space: pre-wrap;
   padding: 1em 15px;
-  margin: 1.6em -15px;
+  margin: 1.5em -15px;
 }
 
 hr {
@@ -300,7 +340,7 @@ hr {
   text-align: center;
   border-top: 1px solid;
   max-width: 64%;
-  margin: 2.4em auto 1.6em;
+  margin: 2.25em auto 1.5em;
   overflow: visible;
   opacity: 0.5;
 }
@@ -309,6 +349,120 @@ hr:before {
   content: '§';
   position: relative;
   top: -0.8em;
-  background: #fff;
-  padding: 0 0.8em;
+  background-color: #fff;
+  padding: 0 0.75em;
+}
+
+.textnegative hr:before {
+  background-color: #000;
+}
+
+.textnegative {
+  line-height: 1.8;
+}
+
+.textnegative h2 + h3 {
+  margin-top: calc(1.5em * 1.33 / 2 - 1em * 1.8 / 2);
+}
+
+.textnegative h1 + p,
+.textnegative h1 + ol,
+.textnegative h1 + ul,
+.textnegative h1 + dl,
+.textnegative h1 + table {
+  margin-top: calc(2em * 1.25 / 2 - 1.8em / 2);
+}
+
+.textnegative h2 + h3,
+.textnegative h2 + p,
+.textnegative h2 + ol,
+.textnegative h2 + ul,
+.textnegative h2 + dl,
+.textnegative h2 + table,
+.textnegative h2 + .tablebox {
+  margin-top: calc(1.5em * 1.33 / 2 - 1.8em / 2);
+}
+
+.textnegative h3 + h4,
+.textnegative h3 + p,
+.textnegative h3 + ol,
+.textnegative h3 + ul,
+.textnegative h3 + dl,
+.textnegative h3 + table,
+.textnegative h3 + .tablebox,
+.textnegative h4 + h5 {
+  margin-top: 1.8em;
+}
+
+.textnegative p + h2,
+.textnegative ol + h2,
+.textnegative ul + h2,
+.textnegative dl + h2,
+.textnegative table + h2,
+.textnegative .tablebox + h2 {
+  margin-top: 3.6em;
+}
+
+.textnegative p + h3,
+.textnegative dl + h3,
+.textnegative ol + h3,
+.textnegative ul + h3,
+.textnegative table + h3,
+.textnegative .tablebox + h3,
+.textnegative p + h4,
+.textnegative dl + h4,
+.textnegative ol + h4,
+.textnegative ul + h4,
+.textnegative table + h4,
+.textnegative .tablebox + h4,
+.textnegative p + h5,
+.textnegative dl + h5,
+.textnegative ol + h5,
+.textnegative ul + h5,
+.textnegative table + h5,
+.textnegative .tablebox + h5,
+.textnegative p + ul,
+.textnegative p + ol,
+.textnegative p + dl,
+.textnegative p + table,
+.textnegative p + .tablebox,
+.textnegative ul + ul,
+.textnegative ul + ol,
+.textnegative ul + dl,
+.textnegative ul + table,
+.textnegative ul + .tablebox,
+.textnegative ol + ul,
+.textnegative ol + ol,
+.textnegative ol + dl,
+.textnegative ol + table,
+.textnegative ol + .tablebox,
+.textnegative dl + ul,
+.textnegative dl + dl,
+.textnegative dl + dl,
+.textnegative dl + table,
+.textnegative dl + .tablebox,
+.textnegative table + ul,
+.textnegative table + ol,
+.textnegative table + dl,
+.textnegative table + table,
+.textnegative .tablebox + .tablebox,
+.textnegative dd + dt {
+  margin-top: 1.8em;
+}
+
+.textnegative h6,
+.textnegative small,
+.textnegative .textnote {
+  font-size: 0.8125em;
+  line-height: calc(1em / 0.8125 * 1.8);
+}
+
+
+@media (min-width: 48em) {
+  p + p {
+    margin-top: 1.5em;
+  }
+  .textnegative p + p {
+    margin-top: 1.8em;
+  }
 }

@@ -33,6 +33,8 @@
         })
       ).then(function () {
         html.classList.add("fonts-loaded");
+      }).catch(function (e) {
+        console.log(e)
       });
     };
     document.head.appendChild(script);
