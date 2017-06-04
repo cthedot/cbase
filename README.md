@@ -1,33 +1,36 @@
-#cbase
+# textbase
 
 Basic minimal template for new projects
 
 - HTML structure
-- CSS: Basic stuff, typography, optionally normalize.css
+- CSS: Basic stuff, typography
+- optionally normalize.css
+- optionally fontfaceobserver for async font loading
 
 Overwrite stuff or remove what is not needed
 
 
-##extras
+## extras
 - settings `box-sizing`, `hyphens` and font-features
 - defines `::selection` and `:target` styles
 
 
-##tags
+## tags
 
-- `h1-h5 p ul ol dl`: font sizes and margins
+- `h1-h5 p ul ol dl table`: font sizes and margins
 - `img img[src$='.svg']`: responsive images
 - `hr`: stylized rule
 
 
-##Defines these helper classes:
+## defines these helper classes:
 
-- `.caps`: caps style for headlines or inline text
-- `.textlink`: links in text
+- `.textnegative`: Light text on dark background needs higher line-height and slightly different rendering on some platforms
+- `.textcaps`: caps style for headlines or inline text
 - `.textul`: base list which uses dashes instead of dots
+- `.textlink`: links in text
 - `.pre`: code parts
 
-##layout
+## layout
 
 A `15px` side padding is used for all screen sizes which is mainly
 useful for small screens though. Only size defined in `px` as this is a minimal
